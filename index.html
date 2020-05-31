@@ -29,6 +29,9 @@
                     </div>
             </nav>
             <div class="container" style="margin-top: 10px;">
+                <p>User: {{ getUser() }}</p>
+              </div>
+            <div class="container" style="margin-top: 10px;">
               <label for="devices" >Choose device:</label>
               <select name="devices" id="devices" v-model="device" v-on:change="selectDevice()">
                 <option v-for="device in devices" v-bind:value="device.id">
@@ -78,7 +81,8 @@
                     title: "Realtime socket.io app with Go",
                     messages: [],
                     device: "your device",
-                    devices: ""
+                    devices: "",
+                    user: ""
                 },
                 beforeMount: function() {
                     this.getDevices();
@@ -96,10 +100,15 @@
                     },
                     async getDevices() {
                         let  devices  = await(await fetch('/api/device')).json();
-                        this.devices = devices                    
-                        
-                        
+                        this.devices = devices
+                    },
+                    async  getUser() {
+                        const response = await fetch("/api/user");
+                        const payload = await response.json();
+                        const { clientPrincipal } = payload;
+                        this.user = clientPrincipal;
                     }
+
                 }
 })
         </script>
