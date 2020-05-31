@@ -1,0 +1,24 @@
+{
+    "routes": [
+      {
+        "route": "/",
+        "allowedRoles": ["reader"]
+      },
+      {
+        "route": "/api/*",
+        "allowedRoles": ["reader"]
+      }
+
+      
+    ],
+    "platformErrorOverrides": [
+      {
+        "errorType": "NotFound",
+        "serve": "/custom-404.html"
+      },
+      {
+        "errorType": "Unauthenticated",
+        "serve": "/login"
+      }
+    ]
+  }
