@@ -104,7 +104,7 @@
                         this.devices = devices
                     },
                     async  getUser() {
-                        const response = await fetch("/api/user");
+                        const response = await fetch("/.auth/me");
                         const payload = await response.json();
                         const { clientPrincipal } = payload;
                         this.user = clientPrincipal;
