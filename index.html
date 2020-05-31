@@ -18,9 +18,12 @@
                             <a class="navbar-brand">{{ title }}</a>
                         </div>
                         
-                        <ul class="nav navbar-nav navbar-right">
-                                <li class="btn btn-primary btn-sm" v-on:click="clearMessages()">Clear messages</button>
+                        <ul class="nav">
+                                <li class="btn btn-primary btn-sm" v-on:click="clearMessages()">Clear messages</li>
+                                &nbsp;
+                                <a class="btn btn-primary btn-sm" href="/.auth/logout">Log out</a>
                         </ul>
+                        
                     </div>
             </nav>
             <div class="container" style="margin-top: 10px;">
