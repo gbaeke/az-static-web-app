@@ -21,9 +21,9 @@
                         <ul class="nav">
                                 <li class="btn btn-primary btn-sm" v-on:click="clearMessages()">Clear messages</li>
                                 &nbsp;
-                                <a class="btn btn-primary btn-sm" href="/.auth/login/github">Login</a> 
+                                <a class="btn btn-primary btn-sm" href="/.auth/login/github" v-if="!user.userDetails">Login</a> 
                                 &nbsp;
-                                <a class="btn btn-primary btn-sm" href="/.auth/logout">Log out</a>
+                                <a class="btn btn-primary btn-sm" href="/.auth/logout" v-if="user.userDetails">Log out</a>
                         </ul>
                         
                     </div>
