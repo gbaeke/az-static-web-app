@@ -1,12 +1,8 @@
 {
     "routes": [
       {
-        "route": "/",
-        "allowedRoles": ["reader"]
-      },
-      {
         "route": "/api/*",
-        "allowedRoles": ["reader"]
+        "allowedRoles": ["Authenticated"]
       }
 
       
@@ -15,10 +11,6 @@
       {
         "errorType": "NotFound",
         "serve": "/custom-404.html"
-      },
-      {
-        "errorType": "Unauthenticated",
-        "serve": "/login"
       }
     ]
   }
