@@ -4,6 +4,8 @@
 
 An Azure static web app that retrieves data from Cosmos DB via the integrated Azure Function APIs. The APIs are protected with the integrated authentication and authorization features of Azure Static Web Apps. This app allows GitHub logins and requires invited GitHub users with the reader role.
 
+Note: demo app to show integrated API & authentication of Azure Static Web App
+
 Blog post: https://blog.baeke.info/2020/06/01/first-look-at-azure-static-web-apps/
 
 Video:
