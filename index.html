@@ -35,7 +35,7 @@
               <label for="links" >Choose link:</label>
               <select name="links" id="links" v-model="link" v-on:change="selectLink()">
                 <option v-for="link in links" v-bind:value="link.id">
-                    {{ link.WebLinks }}
+                    {{ link.weblinks }}
                 </option>
               </select>
             </div>
@@ -93,11 +93,11 @@
                         this.messages = []
                     },
                     selectLink: function() {
-                      console.log("Selected link " + this.WebLinks);
+                      console.log("Selected link " + this.weblinks);
                       socket.close(); // even if not connected
                       this.messages = [];
                       socket.open();
-                      socket.emit('channel', this.WebLinks);
+                      socket.emit('channel', this.weblinks);
                     },
                     async getLinks() {
                         let links  = await(await fetch('/api/links')).json();
