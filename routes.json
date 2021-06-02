@@ -2,7 +2,7 @@
     "routes": [
       {
         "route": "/api/*",
-        "allowedRoles": ["anonymous"]
+        "allowedRoles": ["anonymous", "reader"]
       }
 
       
