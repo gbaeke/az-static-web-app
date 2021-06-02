@@ -92,7 +92,7 @@
                     clearMessages: function() {
                         this.messages = []
                     },
-                    selectLinks function() {
+                    selectLinks: function() {
                       console.log("Selected link " + this.link);
                       socket.close(); // even if not connected
                       this.messages = [];
@@ -100,7 +100,7 @@
                       socket.emit('channel',this.link);
                     },
                     async getLinks() {
-                        let links  = await(await fetch('/api/link')).json();
+                        let links  = await(await fetch('/api/links')).json();
                         this.links = links
                     },
                     async  getUser() {
