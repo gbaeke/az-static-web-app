@@ -85,23 +85,23 @@
                     user: ""
                 },
                 beforeMount: function() {
-                    this.getDevices();
+                    this.getLinks();
                     this.getUser();
                 },
                 methods: {
                     clearMessages: function() {
                         this.messages = []
                     },
-                    selectDevice: function() {
-                      console.log("Selected device " + this.device);
+                    selectLinks function() {
+                      console.log("Selected link " + this.link);
                       socket.close(); // even if not connected
                       this.messages = [];
                       socket.open();
-                      socket.emit('channel',this.device);
+                      socket.emit('channel',this.link);
                     },
-                    async getDevices() {
-                        let  devices  = await(await fetch('/api/device')).json();
-                        this.devices = devices
+                    async getLinks() {
+                        let links  = await(await fetch('/api/link')).json();
+                        this.links = links
                     },
                     async  getUser() {
                         const response = await fetch("/.auth/me");
