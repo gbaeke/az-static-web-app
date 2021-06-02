@@ -35,7 +35,7 @@
               <label for="links" >Choose link:</label>
               <select name="links" id="links" v-model="link" v-on:change="selectLink()">
                 <option v-for="link in links" v-bind:value="link.id">
-                    {{ link.id }}
+                    {{ link.WebLinks }}
                 </option>
               </select>
             </div>
@@ -43,7 +43,7 @@
             <div class="container" style="margin-top: 10px;">
                 <div class="card" >
                     <div class="card-header">
-                        Messages from {{ device }} will appear below
+                        Messages from {{ link }} will appear below
                     </div>
 
                     <div class="card-body">       
@@ -93,7 +93,7 @@
                         this.messages = []
                     },
                     selectLink: function() {
-                      console.log("Selected link " + this.link);
+                      console.log("Selected link " + this.WebLinks);
                       socket.close(); // even if not connected
                       this.messages = [];
                       socket.open();
