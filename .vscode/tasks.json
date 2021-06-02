@@ -4,7 +4,7 @@
     {
       "type": "func",
       "command": "host start",
-      "problemMatcher": "$func-watch",
+      "problemMatcher": "$func-node-watch",
       "isBackground": true,
       "dependsOn": "npm install",
       "options": {
