@@ -97,7 +97,7 @@
                       socket.close(); // even if not connected
                       this.messages = [];
                       socket.open();
-                      socket.emit('channel',this.link);
+                      socket.emit('channel', this.WebLinks);
                     },
                     async getLinks() {
                         let links  = await(await fetch('/api/links')).json();
