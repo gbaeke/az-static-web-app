@@ -17,12 +17,12 @@
       "name": "res"
     },
     {
-      "name": "devices",
+      "name": "WebLinks",
       "type": "cosmosDB",
       "direction": "in",
-      "databaseName": "geba",
-      "collectionName": "devices",
-      "sqlQuery": "SELECT c.id, c.room FROM c",
+      "databaseName": "WebLinks",
+      "collectionName": "WebLinks",
+      "sqlQuery": "SELECT c.id, c.weblinks FROM c",
       "connectionStringSetting": "CosmosDBConnection"    
     }
   ]
