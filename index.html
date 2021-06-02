@@ -32,10 +32,10 @@
                 <p>User: {{ user.userDetails }}</p>
               </div>
             <div class="container" style="margin-top: 10px;">
-              <label for="devices" >Choose device:</label>
-              <select name="devices" id="devices" v-model="device" v-on:change="selectDevice()">
-                <option v-for="device in devices" v-bind:value="device.id">
-                    {{ device.id }}
+              <label for="links" >Choose link:</label>
+              <select name="links" id="links" v-model="link" v-on:change="selectLink()">
+                <option v-for="link in links" v-bind:value="link.id">
+                    {{ link.id }}
                 </option>
               </select>
             </div>
@@ -92,7 +92,7 @@
                     clearMessages: function() {
                         this.messages = []
                     },
-                    selectLinks: function() {
+                    selectLink: function() {
                       console.log("Selected link " + this.link);
                       socket.close(); // even if not connected
                       this.messages = [];
