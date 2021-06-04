@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "device"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "devices",
+      "type": "cosmosDB",
+      "direction": "in",
+      "databaseName": "WebLinks",
+      "collectionName": "devices",
+      "sqlQuery": "SELECT c.id, c./room FROM c",
+      "connectionStringSetting": "CosmosDBConnection"   
+    }
+  ]
+}
